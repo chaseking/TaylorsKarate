@@ -9,25 +9,33 @@
 
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+        var hash = (window.location.hash ? window.location.hash.substring(1) : null);
+        </script>
     </head>
 
     <body>
-        <div id="content">
+        <div id="body">
             <div id="header">
                 <img src="img/header.jpg"></img>
 
                 <div id="nav">
                     <ul class="nav nav-pills">
-                        <li role="presentation" class="active"><a href="#">Home</a></li>
-                        <li role="presentation"><a href="#about">About</a></li>
-                        <li role="presentation"><a href="#">Class Schedule</a></li>
-                        <li role="presentation"><a href="#">Pictures</a></li>
-                        <li role="presentation"><a href="#">Contact</a></li>
+                        <li><a id="nav-home">Home</a></li>
+                        <li><a id="nav-about">About</a></li>
+                        <li><a id="nav-schedule">Class Schedule</a></li>
+                        <li><a id="nav-media">Pictures</a></li>
+                        <li><a id="nav-contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div id="body">
+            <div id="content">
+                <div id="home">
+                    <h1>Taylor's House of Karate</h1>
+                </div>
+
                 <div id="about">
                     <div>
                         <h1>Daythan Taylor</h1>
@@ -142,6 +150,41 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+        var activeContent = null;
+        var activeTab = null;
+        var activeId = null;
+
+        setVisible($($("#content").children()[0]).attr("id"));
+
+        $("#nav a").click(function(){
+            console.log($(this).attr("id").split("-")[1]);
+            setVisible($(this).attr("id").split("-")[1]);
+            /*
+            $(this).parent().parent().next('.tabContainer').children('.active').slideUp('fast',function() {
+$(this).removeClass('current');
+$(this).parent().children('div:nth-child('+curChildIndex+')').slideDown('normal',function() {
+$(this).addClass('current');
+});
+});*/
+        });
+
+        function setVisible(id){
+            if(activeId !== null){
+                if(activeId === id) return;
+                activeTab.removeClass("active");
+                activeContent.removeClass("visible");
+            }
+
+            activeId = id;
+            activeTab = $("#nav-" + id).parent();
+            activeContent = $("#" + id);
+
+            activeTab.addClass("active");
+            activeContent.addClass("visible");
+        }
+        </script>
 
         <div id="footer">
             Website made with <span style="color: #e74c3c;">&#9829;</span> by <a href="http://chaseking.me" target="blank">Chase King</a>.

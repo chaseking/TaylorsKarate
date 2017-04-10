@@ -5,7 +5,7 @@ $.getJSON("./json/schedule.json", function(json){
     //Table header
     var html = "<thead><tr>";
 
-    html += "<td></td>";
+    html += "<td width='150px'></td>";
 
     for(i in days){
         html += "<th>" + days[i] + "</th>";
