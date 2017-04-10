@@ -24,7 +24,7 @@ $.getJSON("./json/schedule.json", function(json){
     for(className in json){
         var classData = json[className];
         html += "<tr>";
-        html += "<th scope='row'>" + className + "</th>";
+        html += "<td>" + className.replace("*", "<strong>").replace("*", "</strong>") + "</th>";
 
         for(i in days){
             var day = days[i];

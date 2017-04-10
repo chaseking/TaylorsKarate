@@ -1,17 +1,17 @@
 {
-    "Cardio" : {
+    "*Cardio*" : {
         "color" : "blue",
         "Tuesday" : [ "7:00-8:00 AM", "9:15-10:15 AM" ],
         "Thursday" : [ "7:00-8:00 AM", "9:15-10:15 AM" ],
         "Saturday" : [ "9:00-10:00 AM" ]
     },
 
-    "Bag Class" : {
+    "*Bag Class*" : {
         "color" : "blue",
         "Friday" : [ "6:15-7:15 PM" ]
     },
 
-    "White Belts (pee-wee and ages 4+)" : {
+    "*White Belts* (pee-wee and ages 4+)" : {
         "color" : "lightblue",
         "Monday" : [ "3:00-3:30 PM" ],
         "Tuesday" : [ "3:00-3:30 PM" ],
@@ -21,7 +21,7 @@
         "Saturday" : [ "10:15-10:45 AM" ]
     },
 
-    "White Belts (kids 5+)" : {
+    "*White Belts* (kids 5+)" : {
         "color" : "lightblue",
         "Monday" : "3:30-4:15 PM",
         "Tuesday" : "3:30-4:15 PM",
@@ -31,7 +31,7 @@
         "Saturday" : "10:15-10:45 AM"
     },
 
-    "Colored Belts (kids 5+)" : {
+    "*Colored Belts* (kids 5+)" : {
         "color" : "green",
         "Monday" : "4:00-5:00 PM",
         "Tuesday" : "4:00-5:00 PM",
@@ -41,7 +41,7 @@
         "Saturday" : "10:45-11:15 PM"
     },
 
-    "Advanced Belts (kids 5+)" : {
+    "*Advanced Belts* (kids 5+)" : {
         "color" : "green",
         "Monday" : "4:45-5:45 PM",
         "Tuesday" : "4:45-5:45 PM",
@@ -51,7 +51,7 @@
         "Saturday" : "10:45-11:15 PM"
     },
 
-    "Private Lessons" : {
+    "*Private Lessons*" : {
         "color" : "gold",
         "Monday" : "4:45-5:15 PM",
         "Tuesday" : "4:45-5:15 PM",
@@ -61,7 +61,7 @@
         "Saturday" : "By Appointment"
     },
 
-    "White and Advanced Belts (adults+ ages 13+)" : {
+    "*White and Advanced Belts* (adults+ ages 13+)" : {
         "color" : "purple",
         "Monday" : "6:15-7:15 PM",
         "Tuesday" : "6:15-7:15 PM",
