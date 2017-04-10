@@ -53,11 +53,15 @@ body {
 }
 
 #about > div {
-    /*border: 2px black solid;*/
-    border-radius: 5px;
     color: black;
     overflow: hidden; /* Make the div grow to fit children */
     font-size: 16px;
+}
+
+#about > div:not(:last-child) {
+    border-bottom: 2px #777 solid; /* Bottom line on all but last element */
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 #about h1 {
