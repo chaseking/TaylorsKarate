@@ -12,6 +12,16 @@
 
         <script type="text/javascript">
         var hash = (window.location.hash ? window.location.hash.substring(1) : null);
+
+        //Credits http://lea.verou.me/2011/05/change-url-hash-without-page-jump/
+        function setHash(hash){
+            hash = "#" + hash;
+            if(history.pushState){
+                history.pushState(null, null, hash);
+            } else {
+                location.hash = hash;
+            }
+        }
         </script>
     </head>
 
@@ -34,6 +44,7 @@
             <div id="content">
                 <div id="home">
                     <h1>Taylor's House of Karate</h1>
+                    <img src="img/derekandstudent.jpg" style="border: 2px #777 solid;"></img>
                 </div>
 
                 <div id="about">
@@ -74,7 +85,7 @@
                         </p>
 
                         <p>
-                            Currently he is ranked third in Korean Traditional Forms and fourth for Japanese
+                            Currently Derek is ranked third in Korean Traditional Forms and fourth for Japanese
                             Traditional Forms. He teaches full time at Taylor's House of Karate, both karate classes
                             and cardio classes. He just received his certification to teach crossfit.
                         </p>
@@ -97,7 +108,7 @@
                         </p>
 
                         <p>
-                            He has been at Taylor's ever since, teaching and helping out whenever needed. For the past
+                            Kyle has been at Taylor's ever since, teaching and helping out whenever needed. For the past
                             couple of years he is back competing and is currently ranked 4th in the Feather Weight Sparring
                             Division.
                         </p>
@@ -133,16 +144,9 @@
                 </div>
 
                 <div id="contact">
-                    Our Address:
-                    555 Francisco Blvd E Ste 12
-                    San Rafael, CA 94901
-                    TODO - Google maps view
-
-                    Our Phone Number:
-                    (415) 257-4300
-
-                    Our Email:
-                    <a href="mailto:taylorkarate12@aol.com">taylorkarate12@aol.com</a>
+                    <p>Phone Number: <strong>(415) 257-4300</strong></p>
+                    <p>Email: <a href="mailto:taylorkarate12@aol.com">taylorkarate12@aol.com</a></p>
+                    <iframe width="600" height="400" frameborder="0" style="border: 2px #777 solid;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-EpzzwELXZ0x927lkIXm0OscYUS3HuI4&q=Taylor's+House+of+Karate" allowfullscreen></iframe>
                 </div>
 
                 <div id="schedule">
@@ -151,16 +155,29 @@
             </div>
         </div>
 
+        <footer>
+            Website made with <span style="color: #e74c3c;">&#9829;</span> by <a href="http://chaseking.me" target="blank">Chase King</a>.
+        </footer>
+
         <script type="text/javascript">
         var activeContent = null;
         var activeTab = null;
         var activeId = null;
 
-        setVisible($($("#content").children()[0]).attr("id"));
+        if(hash){
+            if($("#" + hash)){
+                setVisible(hash);
+            }
+        }
+
+        if(!activeId){
+            setVisible($($("#content").children()[0]).attr("id"));
+        }
 
         $("#nav a").click(function(){
-            console.log($(this).attr("id").split("-")[1]);
-            setVisible($(this).attr("id").split("-")[1]);
+            var id = $(this).attr("id").split("-")[1];
+            setVisible(id);
+            setHash(id);
             /*
             $(this).parent().parent().next('.tabContainer').children('.active').slideUp('fast',function() {
 $(this).removeClass('current');
@@ -185,10 +202,6 @@ $(this).addClass('current');
             activeContent.addClass("visible");
         }
         </script>
-
-        <div id="footer">
-            Website made with <span style="color: #e74c3c;">&#9829;</span> by <a href="http://chaseking.me" target="blank">Chase King</a>.
-        </div>
 
         <script type="text/javascript" src="js/main.js"></script>
     </body>

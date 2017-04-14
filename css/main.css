@@ -6,14 +6,21 @@
 }
 
 body {
-	font-family: "Noto Serif", "Palatino", sans-serif;
+	font-family: "Noto Serif", "Palatino", serif;
 	font-size: 20px;
 	background: #95a5a6; /* Darker background */
 }
 
+html, body {
+    height: 100%;
+}
+
 #body {
+    position: relative;
+    min-height: 100%; /* For the sticky footer */
     width: 75%;
     min-width: 700px;
+    max-width: 1000px;
     margin: 10px auto;
     background: #ecf0f1;
     border: 2px black solid;
@@ -139,11 +146,10 @@ body {
     background: #8e44ad;
 }
 
-#footer {
+footer {
 	padding: 20px;
 	padding-left: 50px;
 	margin: 0 auto;
-	position: static;
 	bottom: 0;
     font-size: 16px;
     text-transform: uppercase;
