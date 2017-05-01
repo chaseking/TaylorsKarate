@@ -8,50 +8,88 @@
 body {
 	font-family: "Noto Serif", "Palatino", serif;
 	font-size: 20px;
-	background: #95a5a6; /* Darker background */
+	background: #F1F1FA;
 }
 
 html, body {
     height: 100%;
 }
 
-#body {
-    position: relative;
-    min-height: 100%; /* For the sticky footer */
-    width: 75%;
-    min-width: 700px;
-    max-width: 1000px;
-    margin: 10px auto;
-    background: #ecf0f1;
-    border: 2px black solid;
-    border-radius: 5px;
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px;
 }
 
-#header img {
-    display: block;
+#push {
+    height: 40px;
+}
+
+footer {
+	font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    background: #bdc3c7;
+    color: #3B3738;
     width: 100%;
-    margin: 0px auto;
+    height: 40px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    position: relative;
+    line-height: 40px;
+}
+
+#top {
+    margin: 0;
+    background-color: white;
+    box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    position: absolute;
+    height: 160px;
+    width: 100%;
+}
+
+#header {
+    padding-top: 20px;
+    padding-bottom: 15px;
 }
 
 #nav {
     padding: 10px;
     font-size: 16px;
-    border-bottom: 2px #777 dotted;
+    margin-right: 25px;
+    /*border-bottom: 2px #777 dotted;*/
+    /*box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.3);*/
 }
 
-#content {
-    padding: 20px;
+#social {
+    height: 20px;
+    margin-top: 10px;
 }
 
-#content > div {
+.content {
+    width: 80%;
+    min-width: 700px;
+    max-width: 1000px;
+    margin: 0px auto 15px;
     display: none;
+    background-color: white;
 }
 
-#content > div.visible {
+.content.visible {
     display: block;
 }
 
-#content h1 {
+.panel {
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+    padding: 15px 20px 5px;
+    /*background: #ecf0f1;*/
+    /*border: 2px black solid;
+    border-radius: 5px;*/
+}
+
+.panel h1 {
     margin-top: 0
 }
 
@@ -144,19 +182,4 @@ html, body {
 
 #schedule .tabledata.purple {
     background: #8e44ad;
-}
-
-footer {
-	padding: 20px;
-	padding-left: 50px;
-	margin: 0 auto;
-	bottom: 0;
-    font-size: 16px;
-    text-transform: uppercase;
-    text-align: center;
-    background: #bdc3c7;
-    color: #3B3738;
-    width: 100%;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
 }

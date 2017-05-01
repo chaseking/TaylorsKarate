@@ -13,12 +13,12 @@
 
     "*White Belts* (pee-wee and ages 4+)" : {
         "color" : "lightblue",
-        "Monday" : [ "3:00-3:30 PM" ],
-        "Tuesday" : [ "3:00-3:30 PM" ],
-        "Wednesday" : [ "3:00-3:30 PM" ],
-        "Thursday" : [ "3:00-3:30 PM" ],
-        "Friday" : [ "3:00-3:30 PM" ],
-        "Saturday" : [ "10:15-10:45 AM" ]
+        "Monday" : "3:00-3:30 PM",
+        "Tuesday" : "3:00-3:30 PM",
+        "Wednesday" : "3:00-3:30 PM",
+        "Thursday" : "3:00-3:30 PM",
+        "Friday" : "3:00-3:30 PM",
+        "Saturday" : "10:15-10:45 AM"
     },
 
     "*White Belts* (kids 5+)" : {
