@@ -50,12 +50,23 @@ footer {
     width: 100%;
 }
 
+#logo {
+    cursor: pointer;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+#logo:hover {
+    width: 230px;
+}
+
 #header {
     padding-top: 20px;
     padding-bottom: 5px;
 }
 
 #nav {
+    cursor: pointer;
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -63,6 +74,14 @@ footer {
     float: right;
     /*border-bottom: 2px #777 dotted;*/
     /*box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.3);*/
+}
+
+#nav > li {
+    transition: all 0.2s;
+}
+
+#nav > li:hover {
+    transform: translateY(-4px);
 }
 
 #social {
