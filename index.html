@@ -226,18 +226,44 @@ $(this).addClass('current');
         });
 
         function setVisible(id){
-            if(activeId !== null){
-                if(activeId === id) return;
+            var newTab = $("#nav-" + id).parent();
+            var newContent = $("#" + id);
+
+            if(activeId){
+                //There is an active tab
+                if(activeId === id) return; //Already on this tab
+                if(activeContent.hasClass("animating") || newContent.hasClass("animating")) return; //Already switching tabs
+
                 activeTab.removeClass("active");
-                activeContent.removeClass("visible");
+                newTab.addClass("active");
+                activeContent.addClass("animating");
+
+                activeContent.slideUp(700, function(){
+                    //Slide down
+                    activeContent.removeClass("animating");
+                    activeTab.removeClass("active");
+                    activeContent.removeClass("visible");
+
+                    activeId = id;
+                    activeTab = newTab;
+                    activeContent = newContent;
+
+                    newContent.addClass("visible");
+                    newContent.addClass("animating");
+                    newContent.hide();
+
+                    newContent.slideDown(700, function(){
+                        newContent.removeClass("animating");
+                    });
+                });
+            } else {
+                //There is no active tab, immediately activate it
+                activeId = id;
+                activeTab = newTab;
+                activeContent = newContent;
+                activeTab.addClass("active");
+                activeContent.addClass("visible");
             }
-
-            activeId = id;
-            activeTab = $("#nav-" + id).parent();
-            activeContent = $("#" + id);
-
-            activeTab.addClass("active");
-            activeContent.addClass("visible");
         }
         </script>
 
